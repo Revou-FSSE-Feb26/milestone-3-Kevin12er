@@ -30,7 +30,7 @@ export default function RootLayout({ children }) {
       className={`${geistSans.variable} ${geistMono.variable} ${scipio.variable} h-full antialiased`}>
       <body className="min-h-full flex flex-col bg-background">
 
-      <header className="flex justify-between items-center bg-[var(--container)] p-8">
+      <header className="flex justify-between items-center bg-[var(--container)] p-8 shadow-2xl">
 
           <h1 className="text-xl md:text-4xl text-white font-scipio">RevoShop</h1>
 
