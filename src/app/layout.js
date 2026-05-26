@@ -27,9 +27,47 @@ export default function RootLayout({ children }) {
   return (
     <html
       lang="en"
-      className={`${geistSans.variable} ${geistMono.variable} ${scipio.variable} h-full antialiased`}
-    >
-      <body className="min-h-full flex flex-col bg-background">{children}</body>
+      className={`${geistSans.variable} ${geistMono.variable} ${scipio.variable} h-full antialiased`}>
+      <body className="min-h-full flex flex-col bg-background">
+
+      <header className="flex justify-between items-center bg-[var(--container)] p-8">
+
+          <h1 className="text-xl md:text-4xl text-white font-scipio">RevoShop</h1>
+
+          <nav className="">
+
+              <ul className="flex justify-between items-center gap-8 text-white">
+
+                  <li className="cursor-pointer font-scipio bg-background text-xs md:text-sm py-1 px-4 rounded-2xl"><a href="/login">Masuk</a></li>
+                  <li className="cursor-pointer font-scipio text-xs md:text-sm text-background bg-white px-4 py-1 rounded-2xl"><a href="/register">Daftar</a></li>
+
+              </ul>
+
+          </nav>
+
+
+      </header>
+
+
+
+      
+
+
+
+
+
+
+
+
+
+
+
+      <main>
+        {children}
+      </main>
+
+
+      </body>
     </html>
   );
 }
