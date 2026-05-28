@@ -1,6 +1,7 @@
 import { Geist, Geist_Mono } from "next/font/google";
 import "./globals.css";
 import localFont from "next/font/local";
+import Link from "next/link";
 
 const scipio = localFont({
   src: "./fonts/Scipio-Regular-Exfontbff2.otf",
@@ -37,10 +38,10 @@ export default function RootLayout({ children }) {
           <nav className="">
             <ul className="flex justify-between items-center gap-8 text-white">
               <li className="cursor-pointer font-scipio bg-background text-xs md:text-sm py-1 px-4 rounded-2xl">
-                <a href="/login">Masuk</a>
+                <Link href="/login">Masuk</Link>
               </li>
               <li className="cursor-pointer font-scipio text-xs md:text-sm text-background bg-white px-4 py-1 rounded-2xl">
-                <a href="/register">Daftar</a>
+                <Link href="/register">Daftar</Link>
               </li>
             </ul>
           </nav>

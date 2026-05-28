@@ -1,3 +1,6 @@
+import Link from "next/link";
+
+
 export default function RegisterPage() {
   return (
     <div className="min-h-[80vh] flex items-center justify-center p-6 shadow-4xl">
@@ -23,9 +26,9 @@ export default function RegisterPage() {
 
          <p className="text-center text-xs text-teks mt-4 font-sans">
           Sudah punya akun?{" "}
-          <a href="/login" className="text-white font-semibold hover:underline">
+          <Link href="/login" className="text-white font-semibold hover:underline">
             Masuk disini
-          </a>
+          </Link>
         </p>
 
       </div>
