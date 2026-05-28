@@ -40,7 +40,7 @@ export default function Home() {
       category: "book",
       rating: 4.9,
       image: BukuHtml,
-      description: "Buku panduan untuk memulai perjalanan belajar pemrograman, ini dirancang khusus agar beginner friendly dan muda untuk dipahami"
+      description: "Buku panduan untuk memulai perjalanan belajar pemrograman, ini dirancang khusus agar beginner friendly dan mudah untuk dipahami"
     },
 
     {
@@ -85,38 +85,40 @@ export default function Home() {
 
   ]
 
-  console.log(products)
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
 
 
 
   return (
-    <main className="min-h-screen bg-(--background)] flex flex-col items-center justify-center p-6 text-(--teks)]">
-      <div className="bg-(--container)] p-8 rounded-2xl shadow-xl max-w-md w-full text-center border border-white/10">
+    <main className="min-h-screen bg-(--background) flex flex-col items-center  p-6 text-(--teks)">
 
-      </div>
+        <div className="space-y-3 mb-4">
+          <h1 className="text-center font-scipio text-3xl ">RevoShop</h1>
+          <h2 className="text-center">Jelajahi produk kami dan dapatkan diskon sebesar <span className="font-bold italic">20%</span></h2>
+        </div>
+        
+
+
+        <section className="grid grid-cols-[repeat(auto-fill,minmax(240px,1fr))] gap-4 bg-(--container) p-8 rounded-2xl shadow-xl h-auto w-full text-center border border-white/10">
+         
+
+          {products.map((product) => (
+            <article key={product.id} className="bg-background border border-background rounded-2xl overflow-hidden flex flex-col shadow-2xl">
+
+                
+                <Image src={product.image} alt="product.name" className="w-full object-cover h-80"/>
+                <span className="capitalize block font-semibold text-sm md:text-2xl text-teks">{product.name}</span>
+                <span className="tracking-tight text-left">{product.description}</span>
+                <span className="font-semibold text-left">{product.rating}</span>
+                <span className="text-left">{product.price}</span>
+
+
+
+
+            </article>
+          ))}  
+
+
+      </section>
     </main>
   );
 }
