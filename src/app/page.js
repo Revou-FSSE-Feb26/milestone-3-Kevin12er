@@ -40,7 +40,7 @@ export default function Home() {
       category: "book",
       rating: 4.9,
       image: BukuHtml,
-      description: "Buku panduan untuk memulai perjalanan belajar pemrograman, ini dirancang khusus agar beginner friendly dan mudah untuk dipahami"
+      description: "Buku panduan untuk memulai perjalanan belajar pemrograman website"
     },
 
     {
@@ -60,7 +60,7 @@ export default function Home() {
       category: "shoes",
       rating: 5.0,
       image: ShoesRevou,
-      description: "Pernah mendengar brand Nike? nah Revou itu kakaknya, sepatu ini dirancang khusus agar teman-teman tidak cuma koding dan koding saja tetapi mau keluar untuk berolahraga sore walau hanya semenit"
+      description: "Sepatu running premium"
     },
 
     {
@@ -70,7 +70,7 @@ export default function Home() {
       category: "bag",
       rating: 3.7,
       image: BagRevou,
-      description: "Tas premium dengan jahitan janda muda yang dibuat dengan sepenuh hati dan menghasilkan tas yang bisa bertahan bertahun-tahun"
+      description: "Berbahan polyester, tas ini dirancang untuk tahan air"
     },
 
     {
@@ -80,7 +80,7 @@ export default function Home() {
       category: "jacket",
       rating: 4.1,
       image: JacketRevou,
-      description: "Jaket premium dan tebal yang bisa melindungi anda dari dinginnya cuaca dan panasnya sinar UI/UV nya matahari"
+      description: "Jaket premium dan tebal berbahan polyester"
     },
 
   ]
@@ -88,37 +88,71 @@ export default function Home() {
 
 
 
-  return (
-    <main className="min-h-screen bg-(--background) flex flex-col items-center  p-6 text-(--teks)">
+return (
+  <main className="min-h-screen bg-(--background) flex flex-col items-center p-6 text-(--teks)">
+    
+    <div className="space-y-2 mb-8 text-center">
+      <h1 className="font-scipio text-4xl tracking-tight">RevoShop</h1>
+      <p className="text-(--teks) opacity-80">
+        Jelajahi produk kami dan dapatkan diskon sebesar{" "}
+        <span className="font-bold italic opacity-100">20%</span>
+      </p>
+    </div>
 
-        <div className="space-y-3 mb-4">
-          <h1 className="text-center font-scipio text-3xl ">RevoShop</h1>
-          <h2 className="text-center">Jelajahi produk kami dan dapatkan diskon sebesar <span className="font-bold italic">20%</span></h2>
-        </div>
-        
+    
+    <section className="grid grid-cols-[repeat(auto-fill,minmax(240px,1fr))] gap-5 bg-(--container) p-8 rounded-2xl shadow-xl w-full border border-white/10">
+      {products.map((product) => (
+        <article
+          key={product.id}
+          className="bg-(--background) border border-white/10 rounded-2xl overflow-hidden flex flex-col"
+        >
+          
+          <div className="relative">
+            <Image
+              src={product.image}
+              alt={product.name}
+              className="w-full object-cover h-40"
+            />
+            <span className="absolute top-2 left-2 bg-red-100 text-red-700 text-xs font-semibold px-2 py-1 rounded-lg">
+              -20%
+            </span>
+          </div>
 
+          
+          <div className="flex flex-col flex-1 p-4 gap-2">
+            <span className="capitalize font-semibold text-base leading-snug">
+              {product.name}
+            </span>
+            <span className="text-sm opacity-60 leading-relaxed">
+              {product.description}
+            </span>
+            <div className="flex items-center gap-1 text-sm opacity-70">
+              <span>⭐</span>
+              <span>{product.rating}</span>
+            </div>
+          </div>
 
-        <section className="grid grid-cols-[repeat(auto-fill,minmax(240px,1fr))] gap-4 bg-(--container) p-8 rounded-2xl shadow-xl h-auto w-full text-center border border-white/10">
-         
+          
+          <div className="flex items-center justify-between px-4 py-3 border-t border-white/10">
+            <div className="flex flex-col">
+              <span className="font-semibold text-sm">{product.price}</span>
+              <span className="text-xs opacity-40 line-through">
+                {product.originalPrice}
+              </span>
+            </div>
 
-          {products.map((product) => (
-            <article key={product.id} className="bg-background border border-background rounded-2xl overflow-hidden flex flex-col shadow-2xl">
+            <div className="flex gap-2">
+              <button className="text-center text-xs cursor-pointer border border-white/20 rounded-lg px-3 py-2 hover:bg-white/10 transition-colors">Lihat Produk</button>
+              <button className="flex items-center gap-1 text-xs cursor-pointer border border-white/20 rounded-lg px-3 py-2 hover:bg-white/10 transition-colors">
+                + Tambah
+              </button>
+            </div>
+          </div>
 
-                
-                <Image src={product.image} alt="product.name" className="w-full object-cover h-80"/>
-                <span className="capitalize block font-semibold text-sm md:text-2xl text-teks">{product.name}</span>
-                <span className="tracking-tight text-left">{product.description}</span>
-                <span className="font-semibold text-left">{product.rating}</span>
-                <span className="text-left">{product.price}</span>
+        </article>
+      ))}
+    </section>
 
-
-
-
-            </article>
-          ))}  
-
-
-      </section>
-    </main>
-  );
+  </main>
+);
 }
