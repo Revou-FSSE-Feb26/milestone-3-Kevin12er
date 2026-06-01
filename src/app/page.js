@@ -1,93 +1,11 @@
+import { products } from "./data/data";
+import Image from "next/image";
 import Link from "next/link";
-import Image from "next/image"
-import BukuTypescript from "./Images/typescript.png";
-import BukuJavascript from "./Images/js.png";
-import BukuHtml from "./Images/html.png";
-import BagRevou from "./Images/bag.png";
-import TshirtRevou from "./Images/t-shirt.png";
-import ShoesRevou from "./Images/shoes.png";
-import JacketRevou from "./Images/jacket.png";
 
 
 export default function Home() {
 
-  const products = [
-
-    {
-      id: 1,
-      name: "Revou typescript book",
-      price: 120_000,
-      category: "book",
-      rating: 4.5,
-      image: BukuTypescript,
-      description: "Buku panduan untuk pemula dalam menginstalasi typescript dan roadmapnya"
-    },
-
-    {
-      id: 2,
-      name: "Revou javascript book",
-      price: 100_000,
-      category: "book",
-      rating: 4.0,
-      image: BukuJavascript,
-      description: "Buku panduan untuk pemula dalam memulai pembelajaran bahasa pemrograman javascript"
-    },
-
-    {
-      id: 3,
-      name: "Revou html and css5 book",
-      price: 70_000,
-      category: "book",
-      rating: 4.9,
-      image: BukuHtml,
-      description: "Buku panduan untuk memulai perjalanan belajar pemrograman website"
-    },
-
-    {
-      id: 4,
-      name: "Revou t-shirt",
-      price: 230_000,
-      category: "t-shirt",
-      rating: 3.0,
-      image: TshirtRevou,
-      description: "Kaos oversize dari perusahaan Revou, berbahan premium 24s cotton-combad"
-    },
-
-    {
-      id: 5,
-      name: "Revou sport shoes",
-      price: 360_000,
-      category: "shoes",
-      rating: 5.0,
-      image: ShoesRevou,
-      description: "Sepatu running premium"
-    },
-
-    {
-      id: 6,
-      name: "Revou bag",
-      price: 260_000,
-      category: "bag",
-      rating: 3.7,
-      image: BagRevou,
-      description: "Berbahan polyester, tas ini dirancang untuk tahan air"
-    },
-
-    {
-      id: 7,
-      name: "Revou jacket",
-      price: 180_000,
-      category: "jacket",
-      rating: 4.1,
-      image: JacketRevou,
-      description: "Jaket premium dan tebal berbahan polyester"
-    },
-
-  ]
-
-
-
-
+  
 return (
   <main className="min-h-screen bg-(--background) flex flex-col items-center p-6 text-(--teks)">
     
@@ -120,10 +38,10 @@ return (
 
           
           <div className="flex flex-col flex-1 p-4 gap-2">
-            <span className="capitalize font-semibold text-base leading-snug">
+            <span className="capitalize font-semibold text-base leading-relaxed">
               {product.name}
             </span>
-            <span className="text-sm opacity-60 leading-relaxed">
+            <span className="text-sm opacity-60 leading-relaxed flex-1">
               {product.description}
             </span>
             <div className="flex items-center gap-1 text-sm opacity-70">
@@ -142,10 +60,10 @@ return (
             </div>
 
             <div className="flex gap-2">
-              <button className="text-center text-xs cursor-pointer border border-white/20 rounded-lg px-3 py-2 hover:bg-white/10 transition-colors">Lihat Produk</button>
-              <button className="flex items-center gap-1 text-xs cursor-pointer border border-white/20 rounded-lg px-3 py-2 hover:bg-white/10 transition-colors">
+              <Link  href={`/products/${product.id}`} className="text-center text-xs cursor-pointer border border-white/20 rounded-lg px-3 py-2 hover:bg-white/10 transition-colors">Lihat Produk</Link>
+              <Link  href={`/products/${product.id}`} className="flex items-center gap-1 text-xs cursor-pointer border border-white/20 rounded-lg px-3 py-2 hover:bg-white/10 transition-colors">
                 + Tambah
-              </button>
+              </Link>
             </div>
           </div>
 
