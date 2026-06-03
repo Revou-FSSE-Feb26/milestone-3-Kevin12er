@@ -1,6 +1,7 @@
 import { products } from "../../data/data";
 import Link from "next/link";
 import Image from "next/image";
+import ProdukTerkait from "./produkterkait.js"
 
 
 export default async function PageId({params}) {
@@ -17,6 +18,7 @@ export default async function PageId({params}) {
       
 
     return (
+
 
 
             <section className="shadow-lg relative flex justify-center">
@@ -41,6 +43,7 @@ export default async function PageId({params}) {
 
                 </article>  
 
+                <ProdukTerkait category={product.category} />
                 <Link href="/" className="absolute bottom-10 right-10 md:bottom-5 md:right-30  text-(--teks) text-center text-xs cursor-pointer border border-white/20 rounded-lg px-3 py-2 hover:bg-white/10 transition-colors">Kembali</Link>
 
             
