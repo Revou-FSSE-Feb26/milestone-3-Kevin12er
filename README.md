@@ -9,8 +9,9 @@ RevoShop adalah website toko online sederhana yang dibangun menggunakan Next.js 
 - Produk terkait berdasarkan kategori
 - Navigasi client side tanpa reload halaman
 - Tampilan responsif untuk mobile dan desktop
-## 🛠Tech Stack
- 
+
+
+## Tech Stack 
 - **Next.js 16** — App Router
 - **React 19**
 - **Tailwind CSS v4**
@@ -71,7 +72,7 @@ Kevin — RevoU FSSE Batch Feb 2026
 
 ## Screenshoot
 ![DesktopView](./screenshoots/desktopView.png)
-![TabletView](./screenshoots/tabletView.png)
+![TabletView](./screenshoots/TabletView.png)
 ![Mobile.view](./screenshoots/Mobile.png)
 
  
