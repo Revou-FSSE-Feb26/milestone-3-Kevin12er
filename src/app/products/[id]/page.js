@@ -21,11 +21,11 @@ export default async function PageId({params}) {
 
 
 
-            <section className="shadow-lg relative flex justify-center">
+            <section className="shadow-lg relative flex flex-col md:flex-row items-center">
 
-            <article className="bg-(--background) border border-white/10 rounded-2xl overflow-hidden flex gap-4 m-8 w-290 flex justify-center items-center">
+            <article className="bg-(--background) border border-white/10 rounded-2xl overflow-hidden flex flex-col md:flex-row gap-4 p-2 m-8 w-290 flex justify-center items-center">
 
-                <figure className="flex justify-center items-center">
+                <figure className="">
                     <Image 
                       src={product.image}
                       alt={product.name}

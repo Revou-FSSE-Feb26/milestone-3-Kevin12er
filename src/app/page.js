@@ -18,7 +18,7 @@ return (
     </div>
 
     
-    <section className="grid grid-cols-[repeat(auto-fill,minmax(240px,1fr))] gap-5 bg-(--container) p-8 rounded-2xl shadow-xl w-full border border-white/10">
+    <section className="grid grid-cols md:grid-cols-4 gap-5 bg-(--container) p-8 rounded-2xl shadow-xl w-full border border-white/10">
       {products.map((product) => (
         <article
           key={product.id}
@@ -53,7 +53,7 @@ return (
           
           <div className="flex items-center justify-between px-4 py-3 border-t border-white/10">
             <div className="flex flex-col">
-              <span className="font-semibold text-sm">{product.price}</span>
+              <span className="font-semibold text-sm">Rp.{product.price}</span>
               <span className="text-xs opacity-40 line-through">
                 {product.originalPrice}
               </span>

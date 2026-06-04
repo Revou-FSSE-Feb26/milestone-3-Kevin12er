@@ -2,6 +2,7 @@ import { Geist, Geist_Mono } from "next/font/google";
 import "./globals.css";
 import localFont from "next/font/local";
 import Link from "next/link";
+import { FaGithub, FaWhatsapp, FaInstagram } from "react-icons/fa"
 
 const scipio = localFont({
   src: "./fonts/Scipio-Regular-Exfontbff2.otf",
@@ -51,7 +52,29 @@ export default function RootLayout({ children }) {
 
 
         
+        <footer className="bg-container">
 
+            <div className="flex justify-between px-8 py-4">
+                  <h2 className="font-scipio text-white text-3xl">RevoShop</h2>
+
+                  <ul className="flex justify-center items-center gap-4">
+                     <a href="">
+                        <FaGithub className="w-8 h-8 active:scale-95 transition transform hover:-y-translate-1 text-teks hover:text-black"/>
+                     </a> 
+                     <a href="">
+                        <FaWhatsapp className="w-8 h-8 active:scale-95 transition transform hover:-y-translate-1 text-teks hover:text-black"/>
+                      </a>
+                      <a href="">
+                        <FaInstagram className="w-8 h-8 active:scale-95 transition transform hover:-y-translate-1 text-teks hover:text-black"/>
+                      </a>
+                  </ul>
+            </div>
+
+             <hr className="text-white"/>
+
+             <p className="text-xs md:text-sm text-center my-2 text-teks">© 2025 RevoShop. All rights reserved.</p>
+
+        </footer>
 
 
       </body>

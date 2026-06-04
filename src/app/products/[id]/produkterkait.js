@@ -23,15 +23,15 @@
 
 		return (
 
-			<section className="flex flex-col md:flex-row justify-center items-center gap-8">
+			<section className="grid grid-cols md:grid-cols-3 gap-4 p-4 w-full">
 					{related.map((item) => (
 
-						<article key={item.id} className="">
+						<article key={item.id} className="flex flex-col items-center text-center">
 						<figure>
 								<Image
 									src={item.image}
 									alt={item.name}
-									className="w-40 object-cover h-40"
+									className="w-full h-32 rounded-lg"
 								/>
 						</figure>
 
@@ -40,13 +40,7 @@
 
 						</article>
 					))}
-
-
-
 			</section>
 
 			)
-
-
-
 	}
