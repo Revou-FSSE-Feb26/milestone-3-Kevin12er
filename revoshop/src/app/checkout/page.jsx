@@ -1,6 +1,4 @@
 "use client"; 
-
-import { Geist, Geist_Mono } from "next/font/google";
 import { useCart } from "@/app/context/Cartcontext"  
 import { useAuth } from "@/app/context/Authcontext"  
 import { FaShoppingCart } from "react-icons/fa"      
