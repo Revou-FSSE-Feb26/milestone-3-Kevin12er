@@ -76,7 +76,7 @@ Kevin — RevoU FSSE Batch Feb 2026
 ![Mobile.view](./screenshoots/Mobile.png)
 
 
-Kunjungi [Revoshop]()
+Kunjungi [Revoshop](https://milestone-3-kevin12er-ylzm-jexumqu0q-kevin12ers-projects.vercel.app/)
 
 
 
