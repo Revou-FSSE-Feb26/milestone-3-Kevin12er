@@ -1,28 +1,9 @@
 "use client"; 
 
 import { Geist, Geist_Mono } from "next/font/google";
-import "./globals.css";
-import localFont from "next/font/local";
-import Link from "next/link";
-import { FaGithub, FaWhatsapp, FaInstagram, FaShoppingCart } from "react-icons/fa";
-import { AuthProvider } from "@/app/context/Authcontext";
-import { CartProvider, useCart } from "@/app/context/Cartcontext"; 
-import { useAuth } from "@/app/context/Authcontext"; 
-
-const scipio = localFont({
-  src: "./fonts/Scipio-Regular-Exfontbff2.otf",
-  variable: "--font-scipio",
-});
-
-const geistSans = Geist({
-  variable: "--font-geist-sans",
-  subsets: ["latin"],
-});
-
-const geistMono = Geist_Mono({
-  variable: "--font-geist-mono",
-  subsets: ["latin"],
-});
+import { useCart } from "@/app/context/Cartcontext"  
+import { useAuth } from "@/app/context/Authcontext"  
+import { FaShoppingCart } from "react-icons/fa"      
 
 function NavigationHeader() {
   const { cart } = useCart();
