@@ -12,13 +12,17 @@ export default function LoginPage() {
   const loginRouter = useRouter();
   const { setUser } = useAuth();
 
+  const [isLoading, setLoading] = useState(false)
+
 
   const berhasilLogin = async (data) => {
 
   const infoKirim = {
     email: data.email,
     password: data.password,
-  }
+  };
+
+  setLoading(true)
 
 
   try {
@@ -44,6 +48,7 @@ export default function LoginPage() {
 
   } catch (error) {
     alert(`ERROR: ${error.message}`)
+    setLoading(false)
   }
 }
 
