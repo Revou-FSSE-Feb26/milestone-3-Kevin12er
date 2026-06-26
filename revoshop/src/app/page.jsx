@@ -73,7 +73,7 @@ return (
               width={400}
               height={160}
               alt={product.title}
-              className="w-full object-cover h-80"
+              className="w-full object-cover h-80 transition hover:scale-105 cursor-pointer"
                unoptimized
             />
             <span className="absolute top-2 left-2 bg-red-100 text-red-700 text-xs font-semibold px-2 py-1 rounded-lg">

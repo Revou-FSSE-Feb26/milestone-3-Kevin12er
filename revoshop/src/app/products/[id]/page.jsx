@@ -18,6 +18,8 @@ export default function PageId({params}) {
 
   try {
 
+    // https://api.escuelajs.co/api/v1/products' ---> URL YANG BENAR
+
     const products = await fetch(`https://api.escuelajs.co/api/v1/products/${id}`);
 
     if (!products.ok) {

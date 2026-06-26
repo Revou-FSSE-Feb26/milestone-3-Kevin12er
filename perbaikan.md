@@ -1,17 +1,24 @@
-button tidak ada di detail page: Requirement mewajibkan "Implement a simple Add to Cart button" di product detail page. Di home page,  tombol "+ Tambah" dan "Lihat Produk" keduanya mengarah ke URL yang sama (/products/${product.id}) — tidak ada cart functionality sama sekali. Ini adalah requirement yang belum terpenuhi.
+useEffect() with fetch API for client-side fetching — ❌ Not Pass: Data produk berasal dari file statis app/data/data.jsx — array JavaScript berisi produk Revou branded (buku,  tas,  jaket,  sepatu) dengan gambar lokal. Tidak ada useEffect dengan fetch ke FakeStoreAPI atau API eksternal lainnya untuk produk. Requirement menyebut "Fetch products and users from FakeStoreAPI" — tidak diimplementasikan.
 
-{/* page.js — kedua tombol href-nya identik */}
+Auth login menggunakan fetch ke Platzi API di login/page.jsx,  namun ini untuk auth bukan product fetching.
 
-<Link href={`/products/${product.id}`}>Lihat Produk</Link>
+Handles loading states properly — ⚠️ Pass dengan Catatan: Dashboard page (dashboard/page.jsx) mengimplementasikan loading state. Namun karena produk dari data statis,  loading state tidak memiliki efek yang berarti pada produk. Untuk halaman login,  tidak ada loading state saat proses fetch berlangsung.
 
-<Link href={`/products/${product.id}`}>+ Tambah</Link>
+Handles API errors properly — ⚠️ Pass dengan Catatan: Dashboard page menggunakan try/catch dan console.error. Login menggunakan try/catch dengan alert() untuk error. Namun karena data produk statis,  tidak ada error handling yang relevan untuk product fetching.
 
 
 
-Tidak ada static pages (FAQ/Promosi): Login dan register ditambahkan (melampaui requirement dasar),  tapi halaman static seperti FAQ atau Promo — yang secara eksplisit diminta di requirement — tidak ada.
+===================
 
-Login dan register adalah form UI saja: Tidak ada useState untuk controlled inputs,  tidak ada submit handler,  tidak ada validasi. Klik submit tidak melakukan apapun.
 
-produkterkait.js indentasi tidak konsisten: Seluruh isi file menggunakan leading tab di setiap baris,  sementara file lain tidak. Minor secara fungsional tapi menunjukkan inkonsistensi formatting.
 
-README memuat instruksi cd milestone-3-Kevin12er/revoshop — tapi folder revoshop tidak ada di repo. README perlu diperbarui.
+API routes for product management (GET,  POST,  PUT,  DELETE) — ❌ Not Pass: Tidak ada folder api/ di seluruh project. Tidak ada API Routes untuk operasi produk.
+
+Dashboard page (dashboard/page.jsx) mengimplementasikan form CRUD dengan tanganiSubmit,  namun semua fetch URL salah — menggunakan 'https://escuelajs.co' (tanpa /api/v1/products) yang merupakan URL yang tidak valid. Semua operasi PUT,  POST,  dan DELETE di dashboard akan gagal silently karena URL endpoint yang keliru.
+
+Ensures secure handling of API requests and responses — ❌ Not Pass: Tidak ada API Routes yang bisa dinilai.
+
+Uses form validation to prevent invalid submissions — ⚠️ Pass dengan Catatan: Dashboard form memvalidasi field kosong dengan alert('Semua kolom formulir wajib diisi!') sebelum submit. Login menggunakan react-hook-form. Namun validasi hanya di level "field tidak boleh kosong" — tidak ada validasi format atau batasan nilai.
+
+Updates UI dynamically when CRUD actions are performed — ⚠️ Pass dengan Catatan: Secara struktural,  kode update state sudah ada — setProducts(products.map(...)) untuk edit,  setProducts([newProduct,  ...products]) untuk create. Namun karena URL API salah,  operasi ini tidak pernah berhasil di praktik. Logika UI update-nya benar,  eksekusinya tidak.
+
