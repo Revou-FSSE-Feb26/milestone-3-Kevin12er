@@ -71,9 +71,9 @@ npm run dev
 Kevin — RevoU FSSE Batch Feb 2026
 
 ## Screenshoot
-![DesktopView](./screenshoots/desktopView.png)
-![TabletView](./screenshoots/TabletView.png)
-![Mobile.view](./screenshoots/Mobile.png)
+![DesktopView](./screenshoots/DESKTOPVIEW.png)
+![TabletView](./screenshoots/TABLETVIEW.png)
+![Mobile.view](./screenshoots/MOBILEVIEW.png)
 
 
 Kunjungi [Revoshop](https://milestone-3-kevin12er-ylzm-jexumqu0q-kevin12ers-projects.vercel.app/)
