@@ -48,28 +48,39 @@ export default function RegisterPage() {
 
 
   return (
-    <div className="min-h-[80vh] flex items-center justify-center p-6 shadow-4xl">
-      <div className="bg-container p-8 rounded-3xl shadow-2xl max-w-md w-full border border-white/10">
-        <h2 className="text-white font-scipio font-bold text-center tracking-wide mb-4 text-3xl">
+    <div className="min-h-[80vh] flex items-center justify-center p-4 md:p-6 shadow-4xl">
+      <div className="bg-container p-6 md:p-8 rounded-3xl shadow-2xl max-w-md w-full border border-white/10">
+        <h2 className="text-white font-scipio font-bold text-center tracking-wide mb-6 text-3xl">
           DAFTAR
         </h2>
         
         <form action="" className="space-y-5" onSubmit={handleSubmit(berhasilMasuk)}>
 
-            <label htmlFor="daftar-email" className="text-white font-semibold uppercase text-sm tracking-widest mb-2">Email</label> 
-            <input type="email" {...register('email')} id="daftar-email" placeholder="Masukkan Email anda" className="block w-full rounded-xl px-4 py-3 text-sm text-white bg-background focus:border-white/40 focus:outline-none order border-white/10" required/>
+          <div>
+            <label htmlFor="daftar-email" className="block text-white font-semibold uppercase text-xs tracking-widest mb-2">Email</label> 
+            <input type="email" {...register('email')} id="daftar-email" placeholder="Masukkan Email anda" className="block w-full rounded-xl px-4 py-3 text-sm text-white bg-background focus:border-white/40 focus:outline-none border border-white/10" required/>
+          </div>
 
-            <label htmlFor="password" className="text-white font-semibold uppercase text-sm tracking-widest mb-2">Password</label>
-            <input type="Password" {...register('password')} id="password" placeholder="Masukkan password anda" className="block w-full rounded-xl px-4 py-3 text-sm text-white bg-background focus:border-white/40 focus:outline-none order border-white/10" required/>
+          <div>
+            <label htmlFor="password" className="block text-white font-semibold uppercase text-xs tracking-widest mb-2">Password</label>
+            <input type="password" {...register('password')} id="password" placeholder="Masukkan password anda" className="block w-full rounded-xl px-4 py-3 text-sm text-white bg-background focus:border-white/40 focus:outline-none border border-white/10" required/>
+          </div>
 
-            <label htmlFor="re-passsword" className="text-white font-semibold uppercase text-sm tracking-widest mb-2">Password</label>
-            <input type="password" {...register('confirmPassword')} id="re-passsword" placeholder="Masukkan kembali password anda" className="block w-full rounded-xl px-4 py-3 text-sm text-white bg-background focus:border-white/40 focus:outline-none order border-white/10" required/>
+          <div>
+            <label htmlFor="re-password" className="block text-white font-semibold uppercase text-xs tracking-widest mb-2">Konfirmasi Password</label>
+            <input type="password" {...register('confirmPassword')} id="re-password" placeholder="Masukkan kembali password anda" className="block w-full rounded-xl px-4 py-3 text-sm text-white bg-background focus:border-white/40 focus:outline-none border border-white/10" required/>
+          </div>
 
-            <button type="submit" className="py-1 bg-background px-4 rounded-xl ml-33 text-white font-scipio tracking-widest active:scale-95 cursor-pointer hover:bg-teks hover:text-background">Daftar</button>
+          <button 
+            type="submit" 
+            className="block font-scipio bg-background text-white font-medium py-3 rounded-xl mx-auto cursor-pointer active:scale-95 text-sm mt-6 hover:bg-teks hover:text-background transition-all duration-200 tracking-wider shadow-md w-[60%] md:w-[50%]"
+          >
+            Daftar
+          </button>
 
         </form>
 
-         <p className="text-center text-xs text-teks mt-4 font-sans">
+         <p className="text-center text-xs text-teks mt-6 font-sans">
           Sudah punya akun?{" "}
           <Link href="/login" className="text-white font-semibold hover:underline">
             Masuk disini

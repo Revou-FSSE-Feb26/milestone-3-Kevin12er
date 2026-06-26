@@ -55,9 +55,8 @@ export default function LoginPage() {
 
 
   return (
-    <div className="min-h-[80vh] flex items-center justify-center p-6 shadow-4xl">
-      {/* Kotak Form Login */}
-      <div className="bg-container p-8 rounded-3xl shadow-2xl max-w-md w-full border border-white/10">
+    <div className="min-h-[80vh] flex items-center justify-center p-4 md:p-6 shadow-4xl">
+      <div className="bg-container p-6 md:p-8 rounded-3xl shadow-2xl max-w-md w-full border border-white/10">
         
        
         <h2 className="font-scipio text-3xl font-bold text-white text-center mb-2 tracking-wide">
@@ -67,7 +66,6 @@ export default function LoginPage() {
           Silakan masuk ke akun RevoShop Anda
         </p>
 
-        {/* Form Input */} {/*saya pakai space-y-5 biar satu kali atur jarak semua child didalam nggak pakai mb*/}
         <form className="space-y-5 font-sans" onSubmit={handleSubmit(berhasilLogin)}>
           <div>
             <label className="block text-xs font-semibold text-white mb-2 tracking-wide" htmlFor="email">
@@ -95,10 +93,9 @@ export default function LoginPage() {
             />
           </div>
 
-          {/*Tombol Login*/}
           <button 
             type="submit" 
-            className="font-scipio bg-background text-white font-medium py-3 rounded-xl ml-22 cursor-pointer active:scale-95 text-sm mt-4 hover:bg-opacity-80 transition-all duration-200 tracking-wider shadow-md w-[50%]"
+            className="block font-scipio bg-background text-white font-medium py-3 rounded-xl mx-auto cursor-pointer active:scale-95 text-sm mt-6 hover:bg-opacity-80 transition-all duration-200 tracking-wider shadow-md w-[60%] md:w-[50%]"
           >
             MASUK SEKARANG
           </button>
