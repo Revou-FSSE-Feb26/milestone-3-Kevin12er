@@ -6,6 +6,8 @@ RevoShop adalah website toko online sederhana yang dibangun menggunakan Next.js 
  
 - Halaman utama menampilkan daftar produk serta link untuk login dan daftar
 - Halaman detail produk dengan informasi lengkap
+- cart/keranjang
+- dashboard untuk mengupdate item
 - Produk terkait berdasarkan kategori
 - Navigasi client side tanpa reload halaman
 - Tampilan responsif untuk mobile dan desktop
@@ -16,25 +18,35 @@ RevoShop adalah website toko online sederhana yang dibangun menggunakan Next.js 
 - **React 19**
 - **Tailwind CSS v4**
 - **react-icons**
-## Struktur Folder
  
+## Structure Project / Struktur Folder
+
 ```
+text
 src/app/
-├── layout.js          
-├── page.js             
-├── globals.css
+├── api/
+│   └── products/
+│       └── route.js
+├── context/
+│   ├── Authcontext.js
+│   └── Cartcontext.js
+├── dashboard/
+│   └── page.jsx
 ├── data/
-│   └── data.js         
+│   └── data.js
+├── login/
+│   └── page.jsx
 ├── products/
 │   └── [id]/
-│       ├── page.js         
-│       └── produkterkait.js 
-├── login/
-│   └── page.js
-└── register/
-    └── page.js
-```
+│       ├── page.jsx
+│       └── produkterkait.jsx
+├── register/
+│   └── page.jsx
+├── globals.css
+├── layout.js
+└── page.js
  
+
 ## Cara Menjalankan
  
 1. Clone repository ini
